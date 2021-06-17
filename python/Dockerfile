@@ -1,5 +1,2 @@
-FROM python:3-alpine
-COPY . /python
-WORKDIR /python
-RUN pip install -r requirements.txt
-CMD python /python/app.py
+FROM centos:7
+RUN yum update -y && yum install epel-release -y && yum install ansible pyyaml openssh -y && yum clean all
